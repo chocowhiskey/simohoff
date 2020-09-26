@@ -2,17 +2,31 @@
   text-align: center;
 }
 
-.header-subtitle {
+.introduction-subtitle {
   color: #159d82;
+  font-size: 24px;
 }
 
 .introduction-two-sentences {
   text-align: start;
   width: 75vw;
+  position: relative;
+}
+.introduction-two-sentences img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+}
+
+// sexy hover effects
+#name:hover ~ #simone {
+  display: block;
 }
 
 // fancy underline and line animation through for introduction text
-.introduction-two-sentences .name {
+#name {
   text-decoration: line-through;
   text-decoration-color: #159d82;
   text-decoration-thickness: 5px;
@@ -45,8 +59,8 @@
 
 .introduction-two-sentences p {
   font-size: 44px;
-
   font-family: "Rubik", sans-serif;
+  width: max-content;
 }
 
 .App-header {

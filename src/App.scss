@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+
+.header-subtitle {
+  color: #159d82;
+}
+
+.introduction-two-sentences {
+  text-align: start;
+  width: 75vw;
+}
+
+// fancy underline and line animation through for introduction text
+.introduction-two-sentences .name {
+  text-decoration: line-through;
+  text-decoration-color: #159d82;
+  text-decoration-thickness: 5px;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: #159d82;
+    text-decoration-thickness: 5px;
+  }
+}
+.introduction-two-sentences .location {
+  text-decoration: line-through;
+  text-decoration-color: #159d82;
+  text-decoration-thickness: 5px;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: #159d82;
+    text-decoration-thickness: 5px;
+  }
+}
+.introduction-two-sentences .workplace {
+  text-decoration: line-through;
+  text-decoration-color: #159d82;
+  text-decoration-thickness: 5px;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: #159d82;
+    text-decoration-thickness: 5px;
+  }
+}
+
+.introduction-two-sentences p {
+  font-size: 44px;
+
+  font-family: "Rubik", sans-serif;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // font-size: calc(10px + 2vmin);
+  color: white;
+}

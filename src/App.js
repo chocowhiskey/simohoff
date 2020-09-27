@@ -1,5 +1,8 @@
 import React from "react";
 import simone from "./images/simone.jpeg";
+import location from "./images/location.jpg";
+import workplace from "./images/workplace.jpg";
+import project1 from "./images/project1.jpg";
 import "./App.scss";
 
 function App() {
@@ -26,6 +29,18 @@ function App() {
               alt="Simone Hoffmann"
               style={{ alignContent: "center" }}
             />
+            <img
+              id="location-image"
+              src={location}
+              alt="Mannheim"
+              style={{ alignContent: "center" }}
+            />
+            <img
+              id="workplace-image"
+              src={workplace}
+              alt="Mafinex"
+              style={{ alignContent: "center" }}
+            />
           </div>
         </div>
         <p className="sticky-about">About</p>
@@ -37,6 +52,17 @@ function App() {
         <p className="latest-work-foreground">
           A selection of some projects I've been working on
         </p>
+      </div>
+      <div className="project1">
+        <img
+          id="project1"
+          src={project1}
+          alt="Project 1"
+          style={{ alignContent: "center" }}
+        />
+        <p>Development</p>
+        <p>Title of project</p>
+        <p>Link to project</p>
       </div>
     </div>
   );

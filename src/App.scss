@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  //min-height: 100vh;
+  height: 100vh;
   display: flex;
   width: 70vw;
   flex-direction: column;
@@ -20,9 +20,7 @@
   //width: 75vw;
   position: relative;
   width: -moz-available;
-
-  padding-top: 20vh;
-  padding-left: 3vw;
+  //padding-top: 13vh;
 }
 
 .introduction-two-sentences p {
@@ -31,7 +29,7 @@
   width: max-content;
   z-index: 1000;
   color: white;
-  line-height: 40%;
+  line-height: 45%;
 }
 
 // fancy underline and line animation through for introduction text
@@ -73,20 +71,41 @@
   line-height: normal !important;
 }
 
-.introduction-two-sentences img {
+#simone {
   position: absolute;
   top: 40%;
   left: 50%;
   display: none;
   transform: translate(-50%, -50%);
-}
-
-#simone {
   opacity: 0.6;
+}
+#location-image {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  width: 400px;
+}
+#workplace-image {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  width: 400px;
 }
 
 // sexy hover effects
 #name:hover ~ #simone {
+  display: block;
+}
+#location:hover ~ #location-image {
+  display: block;
+}
+#workplace:hover ~ #workplace-image {
   display: block;
 }
 
@@ -124,4 +143,13 @@
   font-family: "Rubik", sans-serif;
   color: white;
   position: absolute;
+}
+
+.project1 {
+  width: 70vw;
+  align-self: initial;
+  display: flex;
+  left: 10vw;
+  position: relative;
+  background-color: yellow;
 }

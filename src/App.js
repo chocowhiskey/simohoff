@@ -5,6 +5,31 @@ import workplace from "./images/workplace.jpg";
 import project1 from "./images/project1.jpg";
 import "./App.scss";
 
+function Title(props) {
+  return (
+    <div className="latest-work">
+      <p className="latest-work-background">{props.background}</p>
+      <p className="latest-work-foreground">{props.foreground}</p>
+    </div>
+  );
+}
+
+function Project(props) {
+  return (
+    <div className="project1">
+      <img
+        id="project1"
+        src={props.project1}
+        alt="Project 1"
+        style={{ alignContent: "center" }}
+      />
+      <p className="project1-development">Development</p>
+      <p className="project1-title">{props.title}</p>
+      <p className="project1-link">See project</p>
+    </div>
+  );
+}
+
 function App() {
   return (
     <div className="App" style={{ backgroundColor: "#111111" }}>
@@ -20,7 +45,7 @@ function App() {
 
             <p>.</p>
             <p className="introduction-subtitle">
-              Focused on product and visual design , passionate about gaming,
+              Focused on product and visual design, passionate about gaming,
               technology and dogs
             </p>
             <img
@@ -45,25 +70,17 @@ function App() {
         </div>
         <p className="sticky-about">About</p>
       </header>
-      {/* About - must be sticky */}
-      {/* LATEST WORK */}
-      <div className="latest-work">
-        <p className="latest-work-background">Latest Work</p>
-        <p className="latest-work-foreground">
-          A selection of some projects I've been working on
-        </p>
-      </div>
-      <div className="project1">
-        <img
-          id="project1"
-          src={project1}
-          alt="Project 1"
-          style={{ alignContent: "center" }}
-        />
-        <p>Development</p>
-        <p>Title of project</p>
-        <p>Link to project</p>
-      </div>
+      {/* LATEST WORKS */}
+      <Title
+        background="Latest Work"
+        foreground="A selection of some projects I've been working on"
+      />
+      {/* PROJECTS to insert with Project function */}
+      <Project title="My favorite project" project1={project1} />
+      <Title
+        background="Just for fun"
+        foreground="Some personal projects made mostly for fun"
+      />
     </div>
   );
 }

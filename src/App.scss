@@ -137,6 +137,7 @@
   font-size: 130px;
   color: #159d82;
   opacity: 0.4;
+  margin: 0;
 }
 .latest-work-foreground {
   font-size: 28px;
@@ -148,8 +149,36 @@
 .project1 {
   width: 70vw;
   align-self: initial;
-  display: flex;
+  //display: flex;
   left: 10vw;
   position: relative;
-  background-color: yellow;
+}
+
+#project1 {
+  width: 70vw;
+}
+
+.project1-development {
+  color: #159d82;
+  text-align: left;
+  font-size: 16px;
+  margin: 0;
+}
+.project1-title {
+  color: white;
+  text-align: left;
+  font-size: 48px;
+  margin: 0;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+.project1-link {
+  text-decoration: underline;
+  text-decoration-color: #159d82;
+  text-decoration-thickness: 2px;
+  color: white;
+  text-align: left;
+  font-size: 16px;
+  padding-bottom: 15vh;
+  margin: 0;
 }

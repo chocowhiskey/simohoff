@@ -101,6 +101,7 @@
 // sexy hover effects
 #name:hover ~ #simone {
   display: block;
+  transition: 0.3s;
 }
 #location:hover ~ #location-image {
   display: block;

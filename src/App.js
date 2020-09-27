@@ -5,6 +5,10 @@ import workplace from "./images/workplace.jpg";
 import project1 from "./images/project1.jpg";
 import "./App.scss";
 
+function Hover(props) {
+  return <p id={props.id}>{props.hover}</p>;
+}
+
 function Title(props) {
   return (
     <div className="latest-work">
@@ -37,12 +41,11 @@ function App() {
       <header className="App-header">
         <div style={{ display: "flex" }}>
           <div className="introduction-two-sentences">
-            <p id="name">Simone</p>
+            <Hover hover="Simone" id="name" />
             <p>is a Software Developer based in </p>
-            <p id="location">Mannheim </p>
+            <Hover hover="Mannheim" id="location" />
             <p>currently working at</p>
-            <p id="workplace">Pathmate Technologies</p>
-
+            <Hover hover="Pathmate Technologies" id="workplace" />
             <p>.</p>
             <p className="introduction-subtitle">
               Focused on product and visual design, passionate about gaming,

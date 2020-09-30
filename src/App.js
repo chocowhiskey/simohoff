@@ -76,6 +76,12 @@ function App() {
         background="Just for fun"
         foreground="Some personal projects made mostly for fun"
       />
+      <Project title="My favorite project" project1={project1} />
+      {/* CONTACT */}
+      <Title
+        background="Get in touch"
+        foreground="Drop me a message and let's talk!"
+      />
     </div>
   );
 }

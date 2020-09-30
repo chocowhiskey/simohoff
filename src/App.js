@@ -44,8 +44,6 @@ function App() {
             <Hover hover="Simone" id="name" />
             <p>is a Software Developer based in </p>
             <Hover hover="Mannheim" id="location" />
-            <p>currently working at</p>
-            <Hover hover="Pathmate Technologies" id="workplace" />
             <p>.</p>
             <p className="introduction-subtitle">
               Focused on product and visual design, passionate about gaming,
@@ -61,12 +59,6 @@ function App() {
               id="location-image"
               src={location}
               alt="Mannheim"
-              style={{ alignContent: "center" }}
-            />
-            <img
-              id="workplace-image"
-              src={workplace}
-              alt="Mafinex"
               style={{ alignContent: "center" }}
             />
           </div>

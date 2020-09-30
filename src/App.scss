@@ -77,18 +77,10 @@
   left: 50%;
   display: none;
   transform: translate(-50%, -50%);
-  opacity: 0.6;
-}
-#location-image {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  display: none;
-  transform: translate(-50%, -50%);
-  opacity: 0.6;
+  //opacity: 0.6;
   width: 400px;
 }
-#workplace-image {
+#location-image {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -104,9 +96,6 @@
   transition: 0.3s;
 }
 #location:hover ~ #location-image {
-  display: block;
-}
-#workplace:hover ~ #workplace-image {
   display: block;
 }
 

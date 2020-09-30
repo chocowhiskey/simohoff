@@ -1,9 +1,18 @@
 import React from "react";
 import simone from "./images/simone.jpeg";
 import location from "./images/location.jpg";
-import workplace from "./images/workplace.jpg";
 import project1 from "./images/project1.jpg";
 import "./App.scss";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+// import { , xing } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faXing,
+} from "@fortawesome/free-brands-svg-icons";
 
 function Hover(props) {
   return <p id={props.id}>{props.hover}</p>;
@@ -78,10 +87,26 @@ function App() {
       />
       <Project title="My favorite project" project1={project1} />
       {/* CONTACT */}
-      <Title
-        background="Get in touch"
-        foreground="Drop me a message and let's talk!"
-      />
+      <div>
+        <div className="contact">
+          <Title
+            background="Get in touch"
+            foreground="Drop me a message and let's talk!"
+          />
+          <a href="https://github.com/chocowhiskey" target="_blank">
+            <FontAwesomeIcon icon={faGithub} className="icon" />
+          </a>
+          <a
+            href="https://www.xing.com/profile/Simone_Hoffmann61/"
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faXing} className="icon" />
+          </a>
+          <a href="https://www.linkedin.com/in/simohoff/" target="_blank">
+            <FontAwesomeIcon icon={faLinkedin} className="icon" />
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

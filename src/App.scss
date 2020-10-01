@@ -1,3 +1,6 @@
+$underlineColor: #159d82;
+$underlineHeight: 5%;
+
 .App {
   text-align: center;
 }
@@ -34,25 +37,76 @@
 }
 
 // fancy underline and line animation through for introduction text
-#name {
-  text-decoration: line-through;
-  text-decoration-color: #159d82;
-  text-decoration-thickness: 5px;
-
-  &:hover {
-    text-decoration: underline;
-    text-decoration-color: #159d82;
-    text-decoration-thickness: 5px;
+@keyframes example {
+  from {
+    text-decoration: line-through;
+  }
+  to {
+    text-decoration: none;
   }
 }
-#location {
-  text-decoration: line-through;
+
+#name {
+  position: relative;
+  display: inline-block;
+  //padding: 0 1px;
+  transition: color ease 0.5s;
+  // background-color: yellow;
+  height: max-content;
+  margin: 0%;
+  text-decoration: underline;
   text-decoration-color: #159d82;
   text-decoration-thickness: 5px;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $underlineColor;
+    transition: all ease 0.5s;
+  }
   &:hover {
-    text-decoration: underline;
-    text-decoration-color: #159d82;
-    text-decoration-thickness: 5px;
+    color: white;
+    animation-name: example;
+    animation-duration: 0.5s;
+    &::after {
+      height: 100%;
+    }
+  }
+}
+
+#location {
+  position: relative;
+  display: inline-block;
+  //padding: 0 1px;
+  transition: color ease 0.5s;
+  // background-color: yellow;
+  height: max-content;
+  margin: 0%;
+  text-decoration: underline;
+  text-decoration-color: #159d82;
+  text-decoration-thickness: 5px;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $underlineColor;
+    transition: all ease 0.5s;
+  }
+  &:hover {
+    color: white;
+    animation-name: example;
+    animation-duration: 0.5s;
+    &::after {
+      height: 100%;
+    }
   }
 }
 

@@ -1,18 +1,19 @@
-import React from "react";
-import simone from "./images/simone.jpeg";
-import location from "./images/location.jpg";
-import project1 from "./images/project1.jpg";
-import "./App.scss";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-// import { , xing } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
   faXing,
 } from "@fortawesome/free-brands-svg-icons";
+import { useModal, Modal } from "react-morphing-modal";
+import "react-morphing-modal/dist/ReactMorphingModal.css";
+import React from "react";
+
+import simone from "./images/simone.jpeg";
+import location from "./images/location.jpg";
+import project1 from "./images/project1.jpg";
+import "./App.scss";
 
 function Hover(props) {
   return <p id={props.id}>{props.hover}</p>;
@@ -44,6 +45,8 @@ function Project(props) {
 }
 
 function App() {
+  const { modalProps, getTriggerProps } = useModal();
+
   return (
     <div className="App" style={{ backgroundColor: "#111111" }}>
       {/* INTRODUCTION HEADER */}
@@ -72,7 +75,17 @@ function App() {
             />
           </div>
         </div>
-        <p className="sticky-about">About</p>
+        <button
+          {...getTriggerProps({
+            background: "#666",
+          })}
+          className="sticky-about"
+        >
+          About
+        </button>
+        <Modal {...modalProps} className="modal-about">
+          Hello World
+        </Modal>
       </header>
       {/* LATEST WORKS */}
       <Title

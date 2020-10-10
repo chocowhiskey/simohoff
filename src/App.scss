@@ -154,6 +154,12 @@ $underlineHeight: 5%;
   text-decoration-thickness: 2px;
   color: white;
   font-size: 16px;
+  background-color: #111111;
+  border: none;
+}
+
+.modal-about {
+  background-color: yellow;
 }
 
 // LATEST WORK
@@ -226,4 +232,5 @@ $underlineHeight: 5%;
 .icon {
   padding: 30px;
   color: white;
+  font-size: 5em;
 }

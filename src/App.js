@@ -83,8 +83,40 @@ function App() {
         >
           About
         </button>
-        <Modal {...modalProps} className="modal-about">
-          Hello World
+        <Modal
+          {...modalProps}
+          className="modal-about"
+          style={{ backgroundColor: "blue", height: "100px", width: "auto" }}
+        >
+          <div
+            style={{
+              display: "flex",
+            }}
+          >
+            <img
+              id="simone-modal"
+              src={simone}
+              alt="Simone Hoffmann"
+              style={{ alignContent: "center" }}
+            />
+            <div className="about-description">
+              <h1 className="latest-work-background">About</h1>
+              <p>
+                <bold className="about-bold">
+                  Simone is Software Developer based in Mannheim, currently
+                  working at Pathmate Technologies.
+                </bold>
+              </p>
+              <br />
+              <p className="about-not-bold">
+                Originally from the beautiful Odenwald, I’ve been working as a
+                software developer since 2019. I'm currently working at Pathmate
+                Technologies as Software Developer. Find me here for work stuff,
+                here for some design shots, here for a few nice pictures and
+                here for some quick tweets.
+              </p>
+            </div>
+          </div>
         </Modal>
       </header>
       {/* LATEST WORKS */}

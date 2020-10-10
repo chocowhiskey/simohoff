@@ -145,7 +145,6 @@ $underlineHeight: 5%;
 }
 
 .about-description {
-  background-color: blue;
   left: 40%;
   position: absolute;
   width: 43%;
@@ -259,4 +258,10 @@ $underlineHeight: 5%;
   padding: 30px;
   color: white;
   font-size: 5em;
+  transition: color 0.5s ease;
+  &:hover {
+    transform: rotate3d(1, 1, 1, 45deg);
+    transition: all 0.25s ease-in-out;
+    color: #159d82;
+  }
 }

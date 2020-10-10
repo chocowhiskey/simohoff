@@ -77,7 +77,7 @@ function App() {
         </div>
         <button
           {...getTriggerProps({
-            background: "#666",
+            background: "#111111",
           })}
           className="sticky-about"
         >
@@ -86,7 +86,7 @@ function App() {
         <Modal
           {...modalProps}
           className="modal-about"
-          style={{ backgroundColor: "blue", height: "100px", width: "auto" }}
+          style={{ height: "100px", width: "auto" }}
         >
           <div
             style={{

@@ -14,6 +14,7 @@ import classNames from "classnames/bind";
 import simone from "./images/simone.jpeg";
 import location from "./images/location.jpg";
 import project1 from "./images/project1.jpg";
+import matcher from "./images/matcher.gif";
 import "./App.scss";
 
 const Cursor = () => {
@@ -207,7 +208,10 @@ function App() {
         foreground="A selection of some projects I've been working on"
       />
       {/* PROJECTS to insert with Project function */}
-      <Project title="My favorite project" project1={project1} />
+      <Project
+        title="Matcher - matching at conferences made easy"
+        project1={matcher}
+      />
       <Title
         background="Just for fun"
         foreground="Some personal projects made mostly for fun"

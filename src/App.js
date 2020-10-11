@@ -8,12 +8,85 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useModal, Modal } from "react-morphing-modal";
 import "react-morphing-modal/dist/ReactMorphingModal.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import classNames from "classnames/bind";
 
 import simone from "./images/simone.jpeg";
 import location from "./images/location.jpg";
 import project1 from "./images/project1.jpg";
 import "./App.scss";
+
+const Cursor = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [hidden, setHidden] = useState(false);
+  const [clicked, setClicked] = useState(false);
+  const [linkHovered, setLinkHovered] = useState(false);
+
+  useEffect(() => {
+    addEventListeners();
+    handleLinkHoverEvents();
+    return () => removeEventListeners();
+  }, []);
+
+  const addEventListeners = () => {
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseenter", onMouseEnter);
+    document.addEventListener("mouseleave", onMouseLeave);
+    document.addEventListener("mousedown", onMouseDown);
+    document.addEventListener("mouseup", onMouseUp);
+  };
+
+  const removeEventListeners = () => {
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseenter", onMouseEnter);
+    document.removeEventListener("mouseleave", onMouseLeave);
+    document.removeEventListener("mousedown", onMouseDown);
+    document.removeEventListener("mouseup", onMouseUp);
+  };
+
+  const onMouseLeave = () => {
+    setHidden(true);
+  };
+
+  const onMouseEnter = () => {
+    setHidden(false);
+  };
+
+  const onMouseMove = (e) => {
+    setPosition({ x: e.clientX, y: e.clientY });
+  };
+
+  const onMouseDown = () => {
+    setClicked(true);
+  };
+
+  const onMouseUp = () => {
+    setClicked(false);
+  };
+
+  const handleLinkHoverEvents = () => {
+    document.querySelectorAll("a, Hover, button").forEach((el) => {
+      el.addEventListener("mouseover", () => setLinkHovered(true));
+      el.addEventListener("mouseout", () => setLinkHovered(false));
+    });
+  };
+
+  const cursorClasses = classNames("cursor", {
+    "cursor--hidden": hidden,
+    "cursor--clicked": clicked,
+    "cursor--link-hovered": linkHovered,
+  });
+
+  return (
+    <div
+      className={cursorClasses}
+      style={{
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+      }}
+    />
+  );
+};
 
 function Hover(props) {
   return <p id={props.id}>{props.hover}</p>;
@@ -48,13 +121,21 @@ function App() {
   const { modalProps, getTriggerProps } = useModal();
 
   return (
-    <div className="App" style={{ backgroundColor: "#111111" }}>
+    <div
+      className="App"
+      style={{
+        backgroundColor: "#111111",
+        cursor: "url(./images/fat.cur),auto",
+      }}
+    >
+      <Cursor />
       {/* INTRODUCTION HEADER */}
       <header className="App-header">
         <div style={{ display: "flex" }}>
           <div className="introduction-two-sentences">
             <Hover hover="Simone" id="name" />
-            <p>is a Software Developer based in </p>
+            <p>is a Software Developer</p>
+            <p>based in</p>
             <Hover hover="Mannheim" id="location" />
             <p>.</p>
             <p className="introduction-subtitle">
@@ -88,6 +169,7 @@ function App() {
           className="modal-about"
           style={{ height: "100px", width: "auto" }}
         >
+          <Cursor />
           <div
             style={{
               display: "flex",
@@ -138,16 +220,13 @@ function App() {
             background="Get in touch"
             foreground="Drop me a message and let's talk!"
           />
-          <a href="https://github.com/chocowhiskey" target="_blank">
+          <a href="https://github.com/chocowhiskey">
             <FontAwesomeIcon icon={faGithub} className="icon" />
           </a>
-          <a
-            href="https://www.xing.com/profile/Simone_Hoffmann61/"
-            target="_blank"
-          >
+          <a href="https://www.xing.com/profile/Simone_Hoffmann61/">
             <FontAwesomeIcon icon={faXing} className="icon" />
           </a>
-          <a href="https://www.linkedin.com/in/simohoff/" target="_blank">
+          <a href="https://www.linkedin.com/in/simohoff/">
             <FontAwesomeIcon icon={faLinkedin} className="icon" />
           </a>
         </div>

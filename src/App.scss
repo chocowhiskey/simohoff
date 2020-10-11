@@ -1,6 +1,39 @@
 $underlineColor: #159d82;
 $underlineHeight: 5%;
 
+.cursor {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #159d82;
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: all 150ms ease;
+  transition-property: opacity, background-color, transform, mix-blend-mode;
+}
+
+.cursor--hidden {
+  opacity: 0;
+}
+
+.cursor--clicked {
+  transform: translate(-50%, -50%) scale(0.9);
+  background-color: #159d82;
+}
+
+.cursor--link-hovered {
+  transform: translate(-50%, -50%) scale(1.25);
+  background-color: #159d82;
+}
+
+html,
+body {
+  cursor: none;
+}
+
 .App {
   text-align: center;
 }
@@ -16,6 +49,7 @@ $underlineHeight: 5%;
   // font-size: calc(10px + 2vmin);
   position: relative;
   left: 10vw;
+  cursor: url("./images/fat.cur"), auto;
 }
 
 .introduction-two-sentences {
@@ -120,16 +154,16 @@ $underlineHeight: 5%;
 #simone {
   position: absolute;
   top: 40%;
-  left: 50%;
+  left: 70%;
   display: none;
   transform: translate(-50%, -50%);
-  opacity: 0.6;
+  opacity: 0.5;
   width: 400px;
 }
 #location-image {
   position: absolute;
   top: 40%;
-  left: 50%;
+  left: 70%;
   display: none;
   transform: translate(-50%, -50%);
   opacity: 0.6;
@@ -169,7 +203,6 @@ $underlineHeight: 5%;
   display: block;
 }
 
-// About button on the right site, needs to be sticky
 .sticky-about {
   position: fixed;
   top: 5%;
@@ -181,6 +214,11 @@ $underlineHeight: 5%;
   font-size: 16px;
   background-color: #111111;
   border: none;
+  transition: color 0.5s ease;
+  &:hover {
+    transition: all 0.25s ease-in-out;
+    color: #159d82;
+  }
 }
 
 .modal-about {
@@ -250,7 +288,7 @@ $underlineHeight: 5%;
 }
 
 .contact {
-  height: 100vh;
+  padding-bottom: 20vh;
   padding-top: 20vh;
 }
 

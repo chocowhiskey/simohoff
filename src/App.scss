@@ -276,7 +276,8 @@ body {
   padding-top: 2vh;
   padding-bottom: 2vh;
 }
-.project1-link {
+.project1-link a {
+  display: flex;
   text-decoration: underline;
   text-decoration-color: #159d82;
   text-decoration-thickness: 2px;
@@ -285,11 +286,17 @@ body {
   font-size: 16px;
   padding-bottom: 15vh;
   margin: 0;
+  border: none;
+  transition: color 0.5s ease;
+  &:hover {
+    transition: all 0.25s ease-in-out;
+    color: #159d82;
+  }
 }
 
-.contact {
-  padding-bottom: 20vh;
-  padding-top: 20vh;
+.space-between-title {
+  padding-bottom: 10vh;
+  padding-top: 10vh;
 }
 
 .icon {

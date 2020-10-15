@@ -11,6 +11,8 @@ import "react-morphing-modal/dist/ReactMorphingModal.css";
 import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 
+import { Tooltip, OverlayTrigger, Button } from "react-bootstrap";
+
 import simone from "./images/simone.jpeg";
 import location from "./images/location.jpg";
 import project1 from "./images/project1.jpg";
@@ -113,7 +115,9 @@ function Project(props) {
       />
       <p className="project1-development">Development</p>
       <p className="project1-title">{props.title}</p>
-      <p className="project1-link">See project</p>
+      <p className="project1-link">
+        <a href={props.project_link}>See more</a>
+      </p>
     </div>
   );
 }
@@ -211,29 +215,30 @@ function App() {
       <Project
         title="Matcher - matching at conferences made easy"
         project1={matcher}
+        project_link="https://get-matcher.herokuapp.com/"
       />
-      <Title
-        background="Just for fun"
-        foreground="Some personal projects made mostly for fun"
-      />
-      <Project title="My favorite project" project1={project1} />
+      <div className="space-between-title">
+        <Title
+          background="Just for fun"
+          foreground="Some personal projects made mostly for fun"
+        />
+        <Project title="My favorite project" project1={project1} />
+      </div>
       {/* CONTACT */}
-      <div>
-        <div className="contact">
-          <Title
-            background="Get in touch"
-            foreground="Drop me a message and let's talk!"
-          />
-          <a href="https://github.com/chocowhiskey">
-            <FontAwesomeIcon icon={faGithub} className="icon" />
-          </a>
-          <a href="https://www.xing.com/profile/Simone_Hoffmann61/">
-            <FontAwesomeIcon icon={faXing} className="icon" />
-          </a>
-          <a href="https://www.linkedin.com/in/simohoff/">
-            <FontAwesomeIcon icon={faLinkedin} className="icon" />
-          </a>
-        </div>
+      <div className="space-between-title">
+        <Title
+          background="Get in touch"
+          foreground="Drop me a message and let's talk!"
+        />
+        <a href="https://github.com/chocowhiskey">
+          <FontAwesomeIcon icon={faGithub} className="icon" />
+        </a>
+        <a href="https://www.xing.com/profile/Simone_Hoffmann61/">
+          <FontAwesomeIcon icon={faXing} className="icon" />
+        </a>
+        <a href="https://www.linkedin.com/in/simohoff/">
+          <FontAwesomeIcon icon={faLinkedin} className="icon" />
+        </a>
       </div>
     </div>
   );

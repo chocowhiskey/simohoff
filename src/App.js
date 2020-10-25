@@ -17,6 +17,7 @@ import simone from "./images/simone.jpeg";
 import location from "./images/location.jpg";
 import project1 from "./images/project1.jpg";
 import matcher from "./images/matcher.gif";
+import alpacando from "./images/alpacando.png";
 import "./App.scss";
 
 const Cursor = () => {
@@ -113,7 +114,6 @@ function Project(props) {
         alt="Project 1"
         style={{ alignContent: "center" }}
       />
-      <p className="project1-development">Development</p>
       <p className="project1-title">{props.title}</p>
       <p className="project1-link">
         <a href={props.project_link}>See more</a>
@@ -217,13 +217,12 @@ function App() {
         project1={matcher}
         project_link="https://get-matcher.herokuapp.com/"
       />
-      <div className="space-between-title">
-        <Title
-          background="Just for fun"
-          foreground="Some personal projects made mostly for fun"
-        />
-        <Project title="My favorite project" project1={project1} />
-      </div>
+      <div style={{ height: "13vh" }}></div>
+      <Project
+        title="Alpacando - change your life, rent an alpaca today"
+        project1={alpacando}
+        project_link="https://get-matcher.herokuapp.com/"
+      />
       {/* CONTACT */}
       <div className="space-between-title">
         <Title

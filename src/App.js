@@ -20,6 +20,8 @@ import matcher from "./images/matcher.gif";
 import alpacando from "./images/alpacando.png";
 import "./App.scss";
 
+// Henlo darkness my old fren
+
 const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hidden, setHidden] = useState(false);
